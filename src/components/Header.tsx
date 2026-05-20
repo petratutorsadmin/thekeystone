@@ -276,7 +276,7 @@ export default function Header({ departments, session }: HeaderProps) {
               <>
                 <Link 
                   href="/login" 
-                  className="hidden md:inline-block font-sans text-[9px] md:text-xs font-bold uppercase tracking-widest border border-foreground px-2.5 md:px-4 py-1.5 md:py-2.5 hover:bg-foreground hover:text-background transition-all"
+                  className="inline-block font-sans text-[9px] md:text-xs font-bold uppercase tracking-widest border border-foreground px-2.5 md:px-4 py-1.5 md:py-2.5 hover:bg-foreground hover:text-background transition-all"
                 >
                   Log In
                 </Link>
