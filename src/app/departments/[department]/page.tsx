@@ -14,7 +14,31 @@ const DEPT_MAP: Record<string, { title: string, description: string }> = {
   criticism: { title: "Criticism", description: "Critiques of modern institutions, capitalism, and contemporary thought." }
 };
 
+import type { Metadata } from "next";
+
 export const revalidate = 60; // Revalidate every 60 seconds
+
+export async function generateMetadata({ params }: { params: Promise<{ department: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const department = resolvedParams.department;
+
+  let deptInfo: { title: string, description: string } | null = null;
+  try {
+    deptInfo = await client.fetch(departmentQuery, { department });
+  } catch (e) {
+    console.error("Error fetching department metadata:", e);
+  }
+
+  const info = DEPT_MAP[department] || { title: department, description: `Articles published under the ${department.replace('-', ' ')} department.` };
+  const title = deptInfo?.title || info.title;
+  const description = deptInfo?.description || info.description;
+
+  return {
+    title: title,
+    description: description,
+    keywords: [title, "The Keystone", "Keystone", "department", "essays", "criticism"],
+  };
+}
 
 export default async function DepartmentPage({ params }: { params: Promise<{ department: string }> }) {
   const resolvedParams = await params;

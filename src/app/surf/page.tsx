@@ -6,7 +6,15 @@ import ArticleHeader from "@/components/ArticleHeader";
 import ArticleBody from "@/components/ArticleBody";
 import PullQuote from "@/components/PullQuote";
 
+import type { Metadata } from "next";
+
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "The Surf",
+  description: "Read all essays, dispatches, and student writing on The Surf without stopping.",
+  keywords: ["The Surf", "Keystone Surf", "continuous reading", "Keystone articles", "student essays"],
+};
 
 export default async function SurfPage() {
   let articles: Article[] = [];

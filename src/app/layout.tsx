@@ -25,12 +25,57 @@ const rollercoaster = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "The Keystone",
-  description: "A publication of politics, culture, education, criticism, and student thought.",
+  metadataBase: new URL("https://thekeystone.petratutors.com"),
+  title: {
+    default: "The Keystone",
+    template: "%s | The Keystone"
+  },
+  description: "The Keystone is a publication of politics, culture, education, criticism, and student thought. Published digitally in Tokyo, Japan.",
+  keywords: [
+    "The Keystone",
+    "Keystone",
+    "Keystone Newspaper",
+    "Keystone Review",
+    "Petra Tutors",
+    "Petra",
+    "student publication",
+    "Tokyo newspaper",
+    "critical essays",
+    "educational philosophy",
+    "cultural criticism",
+    "anti-capitalist publication",
+    "student writing",
+    "Tokyo student review",
+    "independent journalism"
+  ],
+  authors: [{ name: "The Keystone Editorial Board" }],
+  creator: "The Keystone",
+  publisher: "The Keystone",
+  robots: { index: true, follow: true },
   openGraph: {
     title: "The Keystone",
     description: "A publication of politics, culture, education, criticism, and student thought.",
+    url: "https://thekeystone.petratutors.com",
+    siteName: "The Keystone",
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "The Keystone Logo",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Keystone",
+    description: "A publication of politics, culture, education, criticism, and student thought.",
+    images: ["/logo.png"],
+  },
+  alternates: {
+    canonical: "https://thekeystone.petratutors.com",
   },
 };
 

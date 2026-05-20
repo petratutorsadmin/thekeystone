@@ -3,7 +3,15 @@ import { contributorsQuery } from "@/sanity/queries";
 import ContributorCard from "@/components/ContributorCard";
 import { type Contributor, sampleContributors } from "@/lib/data";
 
+import type { Metadata } from "next";
+
 export const revalidate = 60; // Revalidate every 60 seconds
+
+export const metadata: Metadata = {
+  title: "Contributors",
+  description: "Meet the editors, writers, and students who contribute to The Keystone.",
+  keywords: ["Contributors", "Keystone writers", "editorial desk", "student contributors"],
+};
 
 export default async function ContributorsPage() {
   let contributors: Contributor[] = [];

@@ -1,6 +1,11 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About & Founders' Note",
+  description: "Why we built The Keystone: A quiet room for student thoughts, long-form essays, and local cultural criticism.",
+  keywords: ["About The Keystone", "Founders Note", "Petra Tutors", "student publication", "Why We Built Keystone"],
+};
 
 export default function AboutPage() {
   return (

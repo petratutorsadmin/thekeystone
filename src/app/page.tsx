@@ -35,34 +35,36 @@ export default async function Home() {
     articles = sampleArticles;
   }
 
-  // Format recommendations into expected dictionary
-  const recommendations: Record<string, {title: string, author: string, note: string}> = {};
-  rawRecommendations.forEach((rec: any) => {
-    if (rec.category) {
-      recommendations[rec.category] = {
-        title: rec.title,
-        author: rec.author,
-        note: rec.note,
-      };
-    }
-  });
-
-  if (Object.keys(recommendations).length === 0) {
-    recommendations["Books"] = {
-      title: "Lorem Ipsum Book",
-      author: "Dolor Sit Amet",
-      note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-    };
-    recommendations["Essays"] = {
-      title: "Lorem Ipsum Essay",
-      author: "Consectetur Adipiscing",
-      note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-    };
-    recommendations["Ideas"] = {
-      title: "Lorem Ipsum Idea",
-      author: "Tempor Incididunt",
-      note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-    };
+  let recommendations: any[] = [];
+  if (rawRecommendations && rawRecommendations.length > 0) {
+    recommendations = rawRecommendations.map((rec: any) => ({
+      _id: rec._id,
+      category: rec.category,
+      title: rec.title,
+      author: rec.author,
+      note: rec.note,
+    }));
+  } else {
+    recommendations = [
+      {
+        category: "Books",
+        title: "Lorem Ipsum Book",
+        author: "Dolor Sit Amet",
+        note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+      },
+      {
+        category: "Essays",
+        title: "Lorem Ipsum Essay",
+        author: "Consectetur Adipiscing",
+        note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+      },
+      {
+        category: "Ideas",
+        title: "Lorem Ipsum Idea",
+        author: "Tempor Incididunt",
+        note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+      }
+    ];
   }
 
   // Take the first 3 articles for "The Surf" preview

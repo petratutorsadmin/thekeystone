@@ -8,7 +8,68 @@ import ArticlePreview from "@/components/ArticlePreview";
 import { type Article, sampleArticles } from "@/lib/data";
 import { getSession } from "@/lib/auth";
 
+import type { Metadata } from "next";
+
 export const revalidate = 60; // Revalidate every 60 seconds
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  let article: Article | null = null;
+
+  try {
+    const rawArticle = await client.fetch(articleBySlugQuery, { slug: resolvedParams.slug });
+    if (rawArticle) {
+      article = {
+        slug: rawArticle.slug,
+        title: rawArticle.title,
+        subtitle: rawArticle.subtitle,
+        summary: rawArticle.summary,
+        department: rawArticle.department || 'essays',
+        author: rawArticle.authorName || 'Contributor',
+        date: rawArticle.date,
+        readingTime: rawArticle.readingTime,
+        content: rawArticle.content,
+      };
+    }
+  } catch (e) {
+    console.error(e);
+  }
+
+  if (!article) {
+    article = sampleArticles.find(a => a.slug === resolvedParams.slug) || null;
+  }
+
+  if (!article) {
+    return {
+      title: "Article Not Found",
+    };
+  }
+
+  return {
+    title: article.title,
+    description: article.summary || article.subtitle || "Read the latest dispatch on The Keystone.",
+    keywords: [article.title, article.department, article.author, "The Keystone", "Keystone", "essays", "criticism"],
+    openGraph: {
+      title: article.title,
+      description: article.summary || article.subtitle || "Read the latest dispatch on The Keystone.",
+      type: "article",
+      publishedTime: article.date,
+      authors: [article.author],
+      images: [
+        {
+          url: "/logo.png",
+          alt: article.title,
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.summary || article.subtitle || "Read the latest dispatch on The Keystone.",
+      images: ["/logo.png"],
+    }
+  };
+}
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
