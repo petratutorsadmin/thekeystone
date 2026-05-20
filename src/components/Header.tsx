@@ -75,151 +75,97 @@ export default function Header({ departments, session }: HeaderProps) {
           </button>
         </div>
 
-        {/* Mega-menu columns container (Desktop Only) */}
-        <div className="hidden md:flex flex-1 overflow-x-auto bg-background divide-x divide-foreground/30 items-stretch overflow-y-hidden select-none">
-          {departments.map((dept, index) => (
-            <div 
-              key={dept.slug} 
-              className={`w-80 md:w-96 shrink-0 p-8 flex flex-col justify-start hover:bg-foreground/[0.01] transition-colors overflow-y-auto ${
-                isMenuOpen ? "animate-fade-up" : ""
-              }`}
-              style={{ animationDelay: isMenuOpen ? `${index * 60}ms` : "0ms" }}
-            >
-              {/* Department Header */}
-              <Link 
-                href={`/departments/${dept.slug}`}
-                onClick={toggleMenu}
-                className="font-sans text-xl font-black uppercase tracking-wider mb-6 flex items-center justify-between border-b-2 border-foreground pb-3 group/title"
-              >
-                <span className="group-hover/title:text-accent transition-colors">{dept.title}</span>
-                <span className="group-hover/title:translate-x-1 transition-transform font-sans">&rarr;</span>
-              </Link>
-
-              {/* Articles Feed inside department */}
-              <div className="space-y-8 select-text">
-                {dept.articles && dept.articles.length > 0 ? (
-                  dept.articles.map((art, idx) => (
-                    <div key={art.slug} className="group/art flex flex-col">
-                      {idx === 0 ? (
-                        // Main article in column (shows image placeholder + detailed text)
-                        <>
-                          <Link 
-                            href={`/articles/${art.slug}`} 
-                            onClick={toggleMenu}
-                            className="block w-full aspect-video bg-border-subtle border border-foreground/30 mb-4 overflow-hidden relative"
-                          >
-                            <div className="w-full h-full flex items-center justify-center text-muted text-[10px] uppercase tracking-widest font-black tablet-hover-img">
-                              IMG
-                            </div>
-                          </Link>
-                          <Link href={`/articles/${art.slug}`} onClick={toggleMenu}>
-                            <h4 className="font-rollercoaster text-lg font-bold text-foreground group-hover/art:text-accent transition-colors leading-tight mb-2 tracking-normal">
-                              {art.title}
-                            </h4>
-                          </Link>
-                          <p className="font-serif text-xs text-muted leading-relaxed line-clamp-3 mb-2">
-                            {art.summary}
-                          </p>
-                          <span className="font-sans text-[10px] text-foreground uppercase tracking-widest font-bold">
-                            By {art.author}
-                          </span>
-                        </>
-                      ) : (
-                        // Secondary text-only article in column
-                        <div className="border-t border-foreground/15 pt-6">
-                          <Link href={`/articles/${art.slug}`} onClick={toggleMenu}>
-                            <h4 className="font-rollercoaster text-base font-bold text-foreground group-hover/art:text-accent transition-colors leading-tight mb-1.5 tracking-normal">
-                              {art.title}
-                            </h4>
-                          </Link>
-                          <p className="font-serif text-xs text-muted leading-relaxed line-clamp-2 mb-2">
-                            {art.summary}
-                          </p>
-                          <span className="font-sans text-[10px] text-foreground uppercase tracking-widest font-bold">
-                            By {art.author}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                  ))
-                ) : (
-                  // Empty column submission invite
-                  <div className="py-8 text-center border-2 border-dashed border-foreground/30 p-4">
-                    <p className="font-serif text-xs text-muted mb-4">No dispatches in this section yet.</p>
-                    <Link 
-                      href="/submit" 
-                      onClick={toggleMenu} 
-                      className="inline-block font-sans text-[9px] font-black uppercase tracking-widest border border-foreground px-4 py-2 hover:bg-foreground hover:text-background transition-all"
-                    >
-                      Submit Writing
-                    </Link>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Simplified Mobile Drawer Menu */}
-        <div className="flex md:hidden flex-1 flex-col overflow-y-auto px-6 py-8 space-y-6">
+        {/* Structured Directory Menu (Responsive Overlay) */}
+        <div className="flex-1 overflow-y-auto px-6 py-12 md:py-20 max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+          {/* Column 1: Sections */}
           <div className="flex flex-col space-y-4">
             <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent border-b border-foreground/20 pb-2">
               Sections
             </span>
-            {departments.map((dept) => (
-              <Link 
-                key={dept.slug}
-                href={`/departments/${dept.slug}`}
-                onClick={toggleMenu}
-                className="font-sans text-2xl font-black uppercase tracking-wider hover:text-accent transition-colors flex items-center justify-between"
-              >
-                <span>{dept.title}</span>
-                <span>&rarr;</span>
-              </Link>
-            ))}
+            <div className="flex flex-col space-y-3.5">
+              {departments.map((dept) => (
+                <Link 
+                  key={dept.slug}
+                  href={`/departments/${dept.slug}`}
+                  onClick={toggleMenu}
+                  className="font-sans text-2xl md:text-3xl font-black uppercase tracking-wider hover:text-accent transition-colors flex items-center justify-between group"
+                >
+                  <span>{dept.title}</span>
+                  <span className="opacity-0 group-hover:opacity-100 transition-opacity font-sans text-xl">&rarr;</span>
+                </Link>
+              ))}
+            </div>
           </div>
           
-          <div className="flex flex-col space-y-4 pt-6 border-t border-foreground/20">
-            <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent pb-2">
+          {/* Column 2: Pages & Information */}
+          <div className="flex flex-col space-y-4">
+            <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent border-b border-foreground/20 pb-2">
               Information
             </span>
-            <Link 
-              href="/about" 
-              onClick={toggleMenu} 
-              className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
-            >
-              Founders' Note & About
-            </Link>
-            <Link 
-              href="/submit" 
-              onClick={toggleMenu} 
-              className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
-            >
-              Submissions
-            </Link>
-            <Link 
-              href="/subscribe" 
-              onClick={toggleMenu} 
-              className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
-            >
-              Subscribe
-            </Link>
-            {session ? (
-              <button 
-                onClick={() => { toggleMenu(); handleLogout(); }}
-                className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors text-left"
-              >
-                Log Out
-              </button>
-            ) : (
+            <div className="flex flex-col space-y-4">
               <Link 
-                href="/login" 
+                href="/" 
                 onClick={toggleMenu} 
-                className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
+                className="font-sans text-lg md:text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
               >
-                Reader Log In
+                Homepage
               </Link>
-            )}
+              <Link 
+                href="/about" 
+                onClick={toggleMenu} 
+                className="font-sans text-lg md:text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
+              >
+                Founders' Note
+              </Link>
+              <Link 
+                href="/submit" 
+                onClick={toggleMenu} 
+                className="font-sans text-lg md:text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
+              >
+                Submissions
+              </Link>
+              <Link 
+                href="/subscribe" 
+                onClick={toggleMenu} 
+                className="font-sans text-lg md:text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
+              >
+                Subscribe
+              </Link>
+              {session ? (
+                <button 
+                  onClick={() => { toggleMenu(); handleLogout(); }}
+                  className="font-sans text-lg md:text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors text-left"
+                >
+                  Log Out
+                </button>
+              ) : (
+                <Link 
+                  href="/login" 
+                  onClick={toggleMenu} 
+                  className="font-sans text-lg md:text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
+                >
+                  Reader Log In
+                </Link>
+              )}
+            </div>
+          </div>
+
+          {/* Column 3: Brand Statement */}
+          <div className="flex flex-col space-y-4">
+            <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent border-b border-foreground/20 pb-2">
+              The Keystone
+            </span>
+            <div className="space-y-6">
+              <p className="font-serif text-sm md:text-base text-muted leading-relaxed">
+                A publication of politics, culture, education, criticism, and student thought. Published digitally in Tokyo, Japan.
+              </p>
+              <p className="font-sans text-xs text-muted leading-relaxed font-bold">
+                Inquiries & Submissions:<br />
+                <a href="mailto:admin@petratutors.com" className="underline hover:text-accent transition-colors">
+                  admin@petratutors.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
