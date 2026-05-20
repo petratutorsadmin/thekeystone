@@ -36,6 +36,12 @@ export default function PageTransition({ children }: { children: React.ReactNode
           !e.metaKey && 
           !e.ctrlKey
         ) {
+          const targetPathname = href.split("?")[0].split("#")[0];
+          if (targetPathname === pathname) {
+            // Already on this page, let it be a no-op instead of locking the screen
+            return;
+          }
+
           e.preventDefault();
           
           // 1. Fade in the blank beige overlay over the current page
@@ -64,7 +70,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
       document.removeEventListener("click", handleLinkClick);
       window.removeEventListener("popstate", handlePopState);
     };
-  }, [router]);
+  }, [router, pathname]);
 
   return (
     <>
