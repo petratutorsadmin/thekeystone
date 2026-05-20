@@ -42,7 +42,7 @@ export default async function Footer() {
             <img 
               src="/logo.png" 
               alt="The Keystone Logo" 
-              className="h-12 w-auto mix-blend-multiply select-none pointer-events-none -ml-2" 
+              className="h-10 w-auto mix-blend-multiply select-none pointer-events-none -ml-2" 
             />
           </div>
           <p className="font-sans text-sm text-muted max-w-sm leading-relaxed font-bold">
@@ -119,9 +119,6 @@ export default async function Footer() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 mt-16 pt-8 border-t border-foreground/30 flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="font-sans text-xs text-muted font-bold">
           &copy; {new Date().getFullYear()} Petra Education. All rights reserved.
-        </p>
-        <p className="font-sans text-xs text-muted font-bold">
-          Design System: Broadside Editorial Standard
         </p>
       </div>
     </footer>

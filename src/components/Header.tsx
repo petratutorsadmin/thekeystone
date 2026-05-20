@@ -252,7 +252,7 @@ export default function Header({ departments, session }: HeaderProps) {
               <img 
                 src="/logo.png" 
                 alt="The Keystone Logo" 
-                className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mix-blend-multiply group-hover:opacity-80 transition-opacity select-none pointer-events-none"
+                className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto mix-blend-multiply group-hover:opacity-80 transition-opacity select-none pointer-events-none"
               />
             </Link>
           </div>

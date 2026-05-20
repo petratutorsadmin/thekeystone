@@ -7,7 +7,7 @@ export default function Masthead() {
         <img 
           src="/logo.png" 
           alt="The Keystone Logo" 
-          className="h-24 sm:h-32 md:h-40 lg:h-48 w-auto mix-blend-multiply group-hover:opacity-80 transition-opacity select-none pointer-events-none"
+          className="h-16 sm:h-20 md:h-28 lg:h-32 w-auto mix-blend-multiply group-hover:opacity-80 transition-opacity select-none pointer-events-none"
         />
       </Link>
       <div className="w-full max-w-lg mt-4 flex items-center justify-between border-y border-foreground py-2 text-xs md:text-sm font-sans font-bold uppercase tracking-widest text-foreground">
