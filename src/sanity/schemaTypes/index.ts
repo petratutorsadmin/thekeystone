@@ -3,6 +3,7 @@ import { contributor } from "./contributor";
 import { department } from "./department";
 import { issue } from "./issue";
 import { recommendation } from "./recommendation";
+import { subscriber } from "./subscriber";
 
 export const schemaTypes = [
   article,
@@ -10,4 +11,5 @@ export const schemaTypes = [
   department,
   issue,
   recommendation,
+  subscriber,
 ];
