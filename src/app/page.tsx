@@ -51,19 +51,19 @@ export default async function Home() {
 
   if (Object.keys(recommendations).length === 0) {
     recommendations["Books"] = {
-      title: "Pedagogy of the Oppressed",
-      author: "Paulo Freire",
-      note: "A classic work of critical pedagogy that argues for education as a practice of freedom, stressing the dialogue between teacher and student as equals in discovering the world."
+      title: "Lorem Ipsum Book",
+      author: "Dolor Sit Amet",
+      note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
     };
     recommendations["Essays"] = {
-      title: "The Death of the Author",
-      author: "Roland Barthes",
-      note: "A foundational post-structuralist essay that dismantles the traditional reliance on biographical authorial intent, inviting the reader to become the true locus of meaning."
+      title: "Lorem Ipsum Essay",
+      author: "Consectetur Adipiscing",
+      note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
     };
     recommendations["Ideas"] = {
-      title: "Capitalist Realism",
-      author: "Mark Fisher",
-      note: "Fisher explores the widespread acceptance that capitalism is the only viable political and economic system, examining its effects on mental health, education, and public institutions."
+      title: "Lorem Ipsum Idea",
+      author: "Tempor Incididunt",
+      note: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
     };
   }
 
@@ -201,16 +201,16 @@ export default async function Home() {
                 Founders' Note
               </span>
               <h3 className="font-serif text-lg font-bold leading-snug mb-2 text-foreground">
-                Welcome to the inaugural issue of Keystone.
+                Lorem Ipsum Dolor Sit Amet
               </h3>
               <p className="font-serif text-xs md:text-sm text-muted leading-relaxed mb-4 line-clamp-3">
-                We founded this publication with a simple conviction: that student thoughts, long-form essays, and local cultural criticism deserve a platform that treats them with serious, rigorous editorial standards. Keystone is built to be a quiet room - a place where ideas can be developed fully, articulated clearly, and read without distraction.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
               </p>
               <Link 
                 href="/about" 
                 className="font-sans text-[10px] font-black uppercase tracking-widest text-accent hover:text-foreground transition-colors inline-flex items-center gap-1"
               >
-                <span>Read the full letter</span>
+                <span>Lorem Ipsum</span>
                 <span className="font-sans">&rarr;</span>
               </Link>
             </div>
