@@ -77,18 +77,12 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div className="mt-8 pt-6 border-t border-foreground/30 text-center space-y-3">
+        <div className="mt-8 pt-6 border-t border-foreground/30 text-center">
           <p className="font-sans text-xs text-muted">
             New reader?{" "}
             <Link href="/subscribe" className="underline font-bold text-foreground hover:text-accent transition-colors">
               Subscribe for Free
             </Link>
-          </p>
-          <p className="font-sans text-[10px] uppercase tracking-wider text-muted/60">
-            Are you an editor?{" "}
-            <a href="/studio" className="underline hover:text-accent transition-colors">
-              Go to Sanity Studio
-            </a>
           </p>
         </div>
       </div>

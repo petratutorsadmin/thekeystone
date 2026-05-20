@@ -64,14 +64,11 @@ export default async function Home() {
   return (
     <div className="max-w-7xl mx-auto w-full px-4 md:px-8 py-8 md:py-16 bg-background">
       {!hasContent ? (
-        <div className="py-24 text-center border-4 border-foreground p-8 bg-background">
-          <h2 className="font-rollercoaster text-4xl font-extrabold mb-4 uppercase tracking-normal">Welcome to Keystone</h2>
-          <p className="font-sans text-muted mb-8 max-w-md mx-auto font-bold">
-            Your publication currently has no active content. Please visit the Studio to create articles, issues, departments, and recommendations.
+        <div className="py-32 text-center border-4 border-foreground p-8 bg-background">
+          <h2 className="font-rollercoaster text-5xl md:text-6xl font-extrabold mb-4 uppercase tracking-normal">Coming Soon</h2>
+          <p className="font-sans text-muted max-w-md mx-auto font-bold text-sm leading-relaxed">
+            The Keystone is preparing its next edition. Check back soon.
           </p>
-          <a href="/studio" className="inline-block bg-foreground text-background font-sans text-xs uppercase tracking-widest font-black py-4 px-8 border border-foreground hover:bg-background hover:text-foreground transition-colors">
-            Go to Sanity Studio
-          </a>
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">

@@ -43,16 +43,13 @@ export default async function DepartmentPage({ params }: { params: Promise<{ dep
           articles={articles} 
         />
       ) : (
-        <div className="text-center py-24 border border-dashed border-border-dark p-8">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-4 capitalize">
+        <div className="text-center py-24 border border-dashed border-foreground/30 p-8">
+          <h1 className="font-rollercoaster text-4xl md:text-5xl font-bold mb-4 capitalize">
             {title.replace('-', ' ')}
           </h1>
-          <p className="font-sans text-muted mb-8 max-w-md mx-auto">
-            There are currently no articles in this department. Go to Sanity Studio to publish some.
+          <p className="font-sans text-muted max-w-md mx-auto font-bold">
+            There are currently no articles in this department. Check back soon.
           </p>
-          <a href="/studio" className="inline-block bg-foreground text-background font-sans text-xs uppercase tracking-widest font-bold py-2 px-6 hover:bg-accent transition-colors">
-            Go to Sanity Studio
-          </a>
         </div>
       )}
     </div>

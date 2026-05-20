@@ -40,13 +40,10 @@ export default async function ContributorsPage() {
             <ContributorCard key={contributor.id} contributor={contributor} />
           ))
         ) : (
-          <div className="text-center py-12 border border-dashed border-border-dark p-8">
-            <p className="font-sans text-muted mb-4">
-              No contributors found. Add them in the Studio.
+          <div className="text-center py-16 border border-dashed border-foreground/30 p-8 w-full">
+            <p className="font-sans text-muted font-bold">
+              No contributors found. Check back soon.
             </p>
-            <a href="/studio" className="inline-block bg-foreground text-background font-sans text-xs uppercase tracking-widest font-bold py-2 px-6 hover:bg-accent transition-colors">
-              Go to Sanity Studio
-            </a>
           </div>
         )}
       </div>
