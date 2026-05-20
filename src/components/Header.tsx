@@ -293,7 +293,7 @@ export default function Header({ departments, session }: HeaderProps) {
         {/* Bounded Date Line */}
         <div className="w-full border-t border-foreground py-3 px-4 text-center">
           <p className="font-sans text-[10px] md:text-xs font-extrabold uppercase tracking-widest text-muted">
-            {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })} &bull; Tokyo Review
+            {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}{" • "}Tokyo Review
           </p>
         </div>
       </header>
