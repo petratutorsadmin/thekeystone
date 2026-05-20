@@ -74,13 +74,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const session = await getSession();
-  
+
   let article: Article | null = null;
   let relatedArticles: Article[] = [];
 
   try {
     const rawArticle = await client.fetch(articleBySlugQuery, { slug: resolvedParams.slug });
-    
+
     if (rawArticle) {
       article = {
         slug: rawArticle.slug,
@@ -95,9 +95,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
         content: rawArticle.content,
       };
 
-      const rawRelated = await client.fetch(relatedArticlesQuery, { 
-        department: rawArticle.department || '', 
-        slug: resolvedParams.slug 
+      const rawRelated = await client.fetch(relatedArticlesQuery, {
+        department: rawArticle.department || '',
+        slug: resolvedParams.slug
       });
 
       relatedArticles = rawRelated.map((r: any) => ({
@@ -137,13 +137,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
   return (
     <article className="w-full pb-24">
       <ArticleHeader article={article} sessionEmail={session?.email} />
-      
+
       <ArticleBody content={content} />
-      
-      <PullQuote 
-        quote="A predictable rhythm is one of the clearest signals of polish, and rhythm breaks are one of the clearest signals of vibe coded work."
-        author="Editorial Standard"
-      />
 
       {relatedArticles.length > 0 && (
         <div className="max-w-4xl mx-auto px-4 md:px-8 mt-24 pt-12 border-t-2 border-foreground">
