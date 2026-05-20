@@ -38,9 +38,13 @@ export default async function Footer() {
     <footer className="w-full border-t-2 border-foreground mt-24 py-12 md:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
         <div className="col-span-1 md:col-span-2">
-          <h2 className="font-rollercoaster text-3xl font-black uppercase tracking-normal text-foreground mb-4">
-            Keystone
-          </h2>
+          <div className="mb-4">
+            <img 
+              src="/logo.png" 
+              alt="The Keystone Logo" 
+              className="h-12 w-auto mix-blend-multiply select-none pointer-events-none -ml-2" 
+            />
+          </div>
           <p className="font-sans text-sm text-muted max-w-sm leading-relaxed font-bold">
             A Petra review of politics, culture, education, criticism, and student thought. Published digitally in Tokyo by{" "}
             <a 

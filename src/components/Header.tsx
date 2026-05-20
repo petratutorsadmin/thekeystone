@@ -57,9 +57,13 @@ export default function Header({ departments, session }: HeaderProps) {
           </div>
 
           {/* Center: Brand Nameplate */}
-          <h3 className="font-rollercoaster text-3xl sm:text-4xl font-black uppercase tracking-normal text-foreground select-none">
-            Keystone
-          </h3>
+          <div className="flex justify-center items-center">
+            <img 
+              src="/logo.png" 
+              alt="The Keystone Logo" 
+              className="h-10 w-auto mix-blend-multiply select-none pointer-events-none"
+            />
+          </div>
 
           {/* Right: Close Drawer Button */}
           <button 
@@ -244,10 +248,12 @@ export default function Header({ departments, session }: HeaderProps) {
 
           {/* Center: Brand Logo */}
           <div className="flex justify-center text-center">
-            <Link href="/" className="group">
-              <h1 className="font-rollercoaster text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-normal text-foreground group-hover:text-accent transition-colors duration-300 uppercase leading-none select-none">
-                Keystone
-              </h1>
+            <Link href="/" className="group flex justify-center items-center">
+              <img 
+                src="/logo.png" 
+                alt="The Keystone Logo" 
+                className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto mix-blend-multiply group-hover:opacity-80 transition-opacity select-none pointer-events-none"
+              />
             </Link>
           </div>
 
