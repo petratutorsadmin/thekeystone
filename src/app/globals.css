@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #F5F1E9;
+  --color-foreground: #281136;
+  --color-muted: #5B4E61;
+  --color-accent: #AF8943;
+  --color-border-subtle: #E6E0D5;
+  --color-border-dark: #281136;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-rollercoaster: var(--font-rollercoaster), serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border-dark);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .prose-editorial {
+    @apply text-base md:text-lg leading-relaxed text-foreground font-serif;
+  }
+  .prose-editorial p {
+    @apply mb-6;
+  }
+  .prose-editorial blockquote {
+    @apply border-l-4 border-accent pl-6 py-2 my-8 italic text-xl text-foreground font-serif;
+  }
+  .prose-editorial h2, .prose-editorial h3 {
+    @apply font-serif text-foreground font-bold mt-10 mb-4;
+  }
+  .prose-editorial h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  .prose-editorial h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  /* Tablet-style grayscale hover transition */
+  .tablet-hover-img {
+    @apply filter grayscale contrast-125 transition-all duration-700 ease-in-out group-hover:grayscale-0 group-hover:contrast-100;
+  }
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    opacity: 0;
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
 }
