@@ -227,39 +227,39 @@ export default function Header({ departments, session }: HeaderProps) {
 
       {/* Main Top Header Block */}
       <header className="w-full bg-background border-b-2 border-foreground">
-        {/* Top Header Panel - Grid based to prevent logo collision */}
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 grid grid-cols-1 md:grid-cols-3 items-center gap-4">
+        {/* Top Header Panel - Flex layout to prevent logo collision and stacking on mobile */}
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-8 flex items-center justify-between gap-4">
           {/* Left: Hamburger menu */}
-          <div className="flex justify-start">
+          <div className="flex-1 flex justify-start">
             <button 
               onClick={toggleMenu}
-              className="flex items-center gap-3 group focus:outline-none cursor-pointer"
+              className="flex items-center gap-2 md:gap-3 group focus:outline-none cursor-pointer"
               aria-label="Toggle Navigation Drawer"
             >
-              <div className="flex flex-col gap-2 justify-center">
-                <span className="w-6 h-[3px] bg-foreground group-hover:bg-accent transition-colors"></span>
-                <span className="w-6 h-[3px] bg-foreground group-hover:bg-accent transition-colors"></span>
-                <span className="w-6 h-[3px] bg-foreground group-hover:bg-accent transition-colors"></span>
+              <div className="flex flex-col gap-1.5 md:gap-2 justify-center">
+                <span className="w-5 md:w-6 h-[2px] md:h-[3px] bg-foreground group-hover:bg-accent transition-colors"></span>
+                <span className="w-5 md:w-6 h-[2px] md:h-[3px] bg-foreground group-hover:bg-accent transition-colors"></span>
+                <span className="w-5 md:w-6 h-[2px] md:h-[3px] bg-foreground group-hover:bg-accent transition-colors"></span>
               </div>
-              <span className="font-sans text-xs font-black uppercase tracking-widest text-foreground group-hover:text-accent transition-colors">
+              <span className="font-sans text-[10px] md:text-xs font-black uppercase tracking-widest text-foreground group-hover:text-accent transition-colors">
                 Menu
               </span>
             </button>
           </div>
 
           {/* Center: Brand Logo */}
-          <div className="flex justify-center text-center">
+          <div className="flex justify-center text-center shrink-0">
             <Link href="/" className="group flex justify-center items-center">
               <img 
                 src="/logo.png" 
                 alt="The Keystone Logo" 
-                className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto mix-blend-multiply group-hover:opacity-80 transition-opacity select-none pointer-events-none"
+                className="h-6 sm:h-8 md:h-12 lg:h-14 w-auto mix-blend-multiply group-hover:opacity-80 transition-opacity select-none pointer-events-none"
               />
             </Link>
           </div>
 
           {/* Right: Actions */}
-          <div className="flex items-center justify-end gap-4">
+          <div className="flex-1 flex items-center justify-end gap-2 md:gap-4">
             {session ? (
               <>
                 <span className="hidden lg:inline-block font-sans text-[10px] uppercase tracking-wider text-muted font-bold">
@@ -267,7 +267,7 @@ export default function Header({ departments, session }: HeaderProps) {
                 </span>
                 <button 
                   onClick={handleLogout}
-                  className="font-sans text-xs font-bold uppercase tracking-widest border border-foreground px-4 py-2.5 hover:bg-foreground hover:text-background transition-all cursor-pointer"
+                  className="font-sans text-[9px] md:text-xs font-bold uppercase tracking-widest border border-foreground px-2 md:px-4 py-1.5 md:py-2.5 hover:bg-foreground hover:text-background transition-all cursor-pointer"
                 >
                   Log Out
                 </button>
@@ -276,13 +276,13 @@ export default function Header({ departments, session }: HeaderProps) {
               <>
                 <Link 
                   href="/login" 
-                  className="hidden md:inline-block font-sans text-xs font-bold uppercase tracking-widest border border-foreground px-4 py-2.5 hover:bg-foreground hover:text-background transition-all"
+                  className="font-sans text-[9px] md:text-xs font-bold uppercase tracking-widest border border-foreground px-2 md:px-4 py-1.5 md:py-2.5 hover:bg-foreground hover:text-background transition-all"
                 >
                   Log In
                 </Link>
                 <Link 
                   href="/subscribe" 
-                  className="bg-accent text-white font-sans text-xs font-extrabold uppercase tracking-widest px-4 py-2.5 rounded-full hover:bg-foreground transition-all"
+                  className="bg-accent text-white font-sans text-[9px] md:text-xs font-extrabold uppercase tracking-widest px-2.5 md:px-4 py-1.5 md:py-2.5 rounded-full hover:bg-foreground transition-all"
                 >
                   Subscribe
                 </Link>
@@ -292,8 +292,8 @@ export default function Header({ departments, session }: HeaderProps) {
         </div>
 
         {/* Bounded Date Line */}
-        <div className="w-full border-t border-foreground py-3 px-4 text-center">
-          <p className="font-sans text-[10px] md:text-xs font-extrabold uppercase tracking-widest text-muted">
+        <div className="w-full border-t border-foreground py-2 px-4 text-center">
+          <p className="font-sans text-[9px] md:text-xs font-extrabold uppercase tracking-widest text-muted">
             {new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}{" • "}Tokyo
           </p>
         </div>
