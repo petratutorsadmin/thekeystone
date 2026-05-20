@@ -77,7 +77,7 @@ export default async function Home() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
           
           {/* Left Column: Secondary Articles & Print Edition Widget */}
-          <div className="lg:col-span-3 flex flex-col gap-8">
+          <div className="lg:col-span-3 flex flex-col gap-8 order-2 lg:order-1">
             <div className="flex flex-col border-b border-foreground/30 pb-8">
               {leftColumnArticles.length > 0 ? (
                 leftColumnArticles.map(article => (
@@ -89,7 +89,7 @@ export default async function Home() {
             </div>
 
             {/* Print Editions Promo Block (Double Border) */}
-            <div className="border-4 border-double border-accent p-8 bg-background flex flex-col items-center text-center">
+            <div className="hidden md:flex border-4 border-double border-accent p-8 bg-background flex flex-col items-center text-center">
               <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent mb-2">Print Editions</span>
               <h3 className="font-rollercoaster text-xl font-black uppercase leading-tight mb-4">Keystone Issue 001</h3>
               <p className="font-serif text-xs text-muted leading-relaxed mb-6">
@@ -102,7 +102,7 @@ export default async function Home() {
           </div>
 
           {/* Center Column: Founder's Note snippet, Cover Story (Hero) & TOC */}
-          <div className="lg:col-span-6 flex flex-col lg:border-x lg:border-foreground/30 lg:px-8">
+          <div className="lg:col-span-6 flex flex-col lg:border-x lg:border-foreground/30 lg:px-8 order-1 lg:order-2">
             {/* Founders' Note Homepage Feature Card */}
             <div className="border-2 border-foreground p-6 mb-8 bg-background/50">
               <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent mb-2 block">
@@ -137,7 +137,7 @@ export default async function Home() {
           </div>
 
           {/* Right Column: Secondary Article, The Scroll Widget, & Weekly Notes */}
-          <div className="lg:col-span-3 flex flex-col gap-12">
+          <div className="lg:col-span-3 flex flex-col gap-12 order-3">
             {rightColumnArticle && (
               <div className="border-b border-foreground/30 pb-8">
                 <ArticlePreview article={rightColumnArticle} hideImage={false} />
@@ -145,7 +145,7 @@ export default async function Home() {
             )}
 
             {/* "The Scroll" Feed Widget */}
-            <div className="border-4 border-double border-accent p-8 bg-background">
+            <div className="hidden md:block border-4 border-double border-accent p-8 bg-background">
               <div className="border-b-2 border-foreground pb-2 mb-4">
                 <h2 className="font-rollercoaster text-xl font-black uppercase tracking-normal text-accent text-center">
                   The Scroll
@@ -168,16 +168,18 @@ export default async function Home() {
             </div>
 
             {/* Weekly Notes */}
-            {Object.keys(recommendations).length > 0 ? (
-              <RecommendationList recommendations={recommendations} />
-            ) : (
-              <div className="border border-foreground p-8 text-center">
-                <h4 className="font-sans text-xs font-black uppercase tracking-widest text-foreground mb-4 border-b border-foreground pb-2">Weekly Notes</h4>
-                <p className="font-serif text-sm text-muted">No weekly notes posted yet.</p>
-              </div>
-            )}
+            <div className="hidden md:block">
+              {Object.keys(recommendations).length > 0 ? (
+                <RecommendationList recommendations={recommendations} />
+              ) : (
+                <div className="border border-foreground p-8 text-center">
+                  <h4 className="font-sans text-xs font-black uppercase tracking-widest text-foreground mb-4 border-b border-foreground pb-2">Weekly Notes</h4>
+                  <p className="font-serif text-sm text-muted">No weekly notes posted yet.</p>
+                </div>
+              )}
+            </div>
             
-            <div className="bg-foreground text-background p-8 text-center border border-foreground">
+            <div className="hidden md:block bg-foreground text-background p-8 text-center border border-foreground">
               <h3 className="font-rollercoaster text-2xl font-black uppercase tracking-normal mb-4">
                 Submissions
               </h3>

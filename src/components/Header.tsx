@@ -71,8 +71,8 @@ export default function Header({ departments, session }: HeaderProps) {
           </button>
         </div>
 
-        {/* Mega-menu columns container */}
-        <div className="flex-1 flex overflow-x-auto bg-background divide-x divide-foreground/30 items-stretch overflow-y-hidden select-none">
+        {/* Mega-menu columns container (Desktop Only) */}
+        <div className="hidden md:flex flex-1 overflow-x-auto bg-background divide-x divide-foreground/30 items-stretch overflow-y-hidden select-none">
           {departments.map((dept, index) => (
             <div 
               key={dept.slug} 
@@ -109,7 +109,7 @@ export default function Header({ departments, session }: HeaderProps) {
                             </div>
                           </Link>
                           <Link href={`/articles/${art.slug}`} onClick={toggleMenu}>
-                            <h4 className="font-serif text-lg font-bold text-foreground group-hover/art:text-accent transition-colors leading-tight mb-2 tracking-tight">
+                            <h4 className="font-rollercoaster text-lg font-bold text-foreground group-hover/art:text-accent transition-colors leading-tight mb-2 tracking-normal">
                               {art.title}
                             </h4>
                           </Link>
@@ -124,7 +124,7 @@ export default function Header({ departments, session }: HeaderProps) {
                         // Secondary text-only article in column
                         <div className="border-t border-foreground/15 pt-6">
                           <Link href={`/articles/${art.slug}`} onClick={toggleMenu}>
-                            <h4 className="font-serif text-base font-bold text-foreground group-hover/art:text-accent transition-colors leading-tight mb-1.5 tracking-tight">
+                            <h4 className="font-rollercoaster text-base font-bold text-foreground group-hover/art:text-accent transition-colors leading-tight mb-1.5 tracking-normal">
                               {art.title}
                             </h4>
                           </Link>
@@ -154,6 +154,69 @@ export default function Header({ departments, session }: HeaderProps) {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Simplified Mobile Drawer Menu */}
+        <div className="flex md:hidden flex-1 flex-col overflow-y-auto px-6 py-8 space-y-6">
+          <div className="flex flex-col space-y-4">
+            <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent border-b border-foreground/20 pb-2">
+              Sections
+            </span>
+            {departments.map((dept) => (
+              <Link 
+                key={dept.slug}
+                href={`/departments/${dept.slug}`}
+                onClick={toggleMenu}
+                className="font-sans text-2xl font-black uppercase tracking-wider hover:text-accent transition-colors flex items-center justify-between"
+              >
+                <span>{dept.title}</span>
+                <span>&rarr;</span>
+              </Link>
+            ))}
+          </div>
+          
+          <div className="flex flex-col space-y-4 pt-6 border-t border-foreground/20">
+            <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent pb-2">
+              Information
+            </span>
+            <Link 
+              href="/about" 
+              onClick={toggleMenu} 
+              className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
+            >
+              Founders' Note & About
+            </Link>
+            <Link 
+              href="/submit" 
+              onClick={toggleMenu} 
+              className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
+            >
+              Submissions
+            </Link>
+            <Link 
+              href="/subscribe" 
+              onClick={toggleMenu} 
+              className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
+            >
+              Subscribe
+            </Link>
+            {session ? (
+              <button 
+                onClick={() => { toggleMenu(); handleLogout(); }}
+                className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors text-left"
+              >
+                Log Out
+              </button>
+            ) : (
+              <Link 
+                href="/login" 
+                onClick={toggleMenu} 
+                className="font-sans text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
+              >
+                Reader Log In
+              </Link>
+            )}
+          </div>
         </div>
       </div>
 
@@ -232,7 +295,7 @@ export default function Header({ departments, session }: HeaderProps) {
       {/* Floating Sticky Browse Button */}
       <button 
         onClick={toggleMenu}
-        className="fixed top-0 bottom-0 right-0 w-[32px] h-screen bg-background border-l border-foreground z-40 font-sans text-[9px] font-black uppercase tracking-[0.25em] text-accent hover:bg-foreground hover:text-white transition-all cursor-pointer select-none text-center writing-vertical flex items-center justify-center"
+        className="hidden md:flex fixed top-0 bottom-0 right-0 w-[32px] h-screen bg-background border-l border-foreground z-40 font-sans text-[9px] font-black uppercase tracking-[0.25em] text-accent hover:bg-foreground hover:text-white transition-all cursor-pointer select-none text-center writing-vertical items-center justify-center"
       >
         Browse Our Sections &nbsp; &uarr;
       </button>
