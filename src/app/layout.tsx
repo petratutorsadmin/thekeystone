@@ -25,11 +25,11 @@ const rollercoaster = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "The Keystone | A Petra Review",
-  description: "A Petra review of politics, culture, education, criticism, and student thought.",
+  title: "The Keystone",
+  description: "A publication of politics, culture, education, criticism, and student thought.",
   openGraph: {
-    title: "The Keystone | A Petra Review",
-    description: "A Petra review of politics, culture, education, criticism, and student thought.",
+    title: "The Keystone",
+    description: "A publication of politics, culture, education, criticism, and student thought.",
     type: "website",
   },
 };

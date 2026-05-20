@@ -6,14 +6,14 @@ export default function SubmitPage() {
           Submissions
         </h1>
         <p className="font-sans text-lg text-muted">
-          Guidelines for contributing to The Keystone Review.
+          Guidelines for contributing to The Keystone.
         </p>
       </div>
 
       <div className="prose-editorial">
         <h2>Who Can Submit</h2>
         <p>
-          The Keystone Review accepts submissions from current Petra students, alumni, and invited guest contributors. We are looking for thoughtful, considered writing that engages critically with its subject matter.
+          The Keystone accepts submissions from current Petra students, alumni, and invited guest contributors. We are looking for thoughtful, considered writing that engages critically with its subject matter.
         </p>
 
         <h2>Accepted Formats</h2>
@@ -37,7 +37,7 @@ export default function SubmitPage() {
         </p>
 
         <div className="mt-12 text-center pt-8 border-t border-border-dark">
-          <a href="mailto:editor@petra.example.com" className="inline-block bg-foreground text-background font-sans text-sm uppercase tracking-widest font-bold py-4 px-8 hover:bg-accent transition-colors">
+          <a href="mailto:admin@petratutors.com" className="inline-block bg-foreground text-background font-sans text-sm uppercase tracking-widest font-bold py-4 px-8 hover:bg-accent transition-colors">
             Submit by Email
           </a>
         </div>

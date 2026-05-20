@@ -46,7 +46,7 @@ export default async function Footer() {
             />
           </div>
           <p className="font-sans text-sm text-muted max-w-sm leading-relaxed font-bold">
-            A Petra review of politics, culture, education, criticism, and student thought. Published digitally in Tokyo by{" "}
+            A publication of politics, culture, education, criticism, and student thought. Published digitally in Tokyo by{" "}
             <a 
               href="https://petratutors.com" 
               target="_blank" 

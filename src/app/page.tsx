@@ -109,7 +109,7 @@ export default async function Home() {
                 Welcome to the inaugural issue of Keystone.
               </h3>
               <p className="font-serif text-xs md:text-sm text-muted leading-relaxed mb-4 line-clamp-3">
-                We founded this review with a simple conviction: that student thoughts, long-form essays, and local cultural criticism deserve a platform that treats them with serious, rigorous editorial standards. Keystone is built to be a quiet room - a place where ideas can be developed fully, articulated clearly, and read without distraction.
+                We founded this publication with a simple conviction: that student thoughts, long-form essays, and local cultural criticism deserve a platform that treats them with serious, rigorous editorial standards. Keystone is built to be a quiet room - a place where ideas can be developed fully, articulated clearly, and read without distraction.
               </p>
               <Link 
                 href="/about" 

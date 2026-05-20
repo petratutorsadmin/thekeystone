@@ -91,7 +91,7 @@ export default function SubscribePage() {
             <h3 className="font-rollercoaster text-2xl font-black uppercase mt-2 mb-1">Print Edition</h3>
             <span className="font-sans text-xs font-bold text-accent">Free for Students</span>
             <p className="font-serif text-sm text-foreground mt-6 leading-relaxed">
-              Get a physical copy of our quarterly review. Free for local Petra students/members. Optional $15 postage contribution for external readers.
+              Get a physical copy of our quarterly publication. Free for local Petra students/members. Optional $15 postage contribution for external readers.
             </p>
           </div>
           <div className="mt-8">
