@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // 1. Skip Next.js internals, API, and static files
@@ -37,6 +37,6 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Apply middleware to all routes except public folders
+  // Apply proxy to all routes except public folders
   matcher: ["/((?!public|static|fonts).*)"],
 };
