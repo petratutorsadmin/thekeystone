@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { logoutUser } from "@/lib/auth";
 
@@ -24,6 +24,7 @@ interface HeaderProps {
 
 export default function Header({ departments, session }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [savedArticles, setSavedArticles] = useState<{ title: string; slug: string }[]>([]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -31,6 +32,31 @@ export default function Header({ departments, session }: HeaderProps) {
     await logoutUser();
     window.location.reload();
   };
+
+  useEffect(() => {
+    if (session?.email) {
+      const loadSaved = () => {
+        try {
+          const raw = localStorage.getItem(`saved_articles_${session.email}`);
+          if (raw) {
+            setSavedArticles(JSON.parse(raw));
+          } else {
+            setSavedArticles([]);
+          }
+        } catch (e) {
+          console.error("Error loading saved articles", e);
+        }
+      };
+      loadSaved();
+
+      window.addEventListener("storage", loadSaved);
+      return () => {
+        window.removeEventListener("storage", loadSaved);
+      };
+    } else {
+      setSavedArticles([]);
+    }
+  }, [session, isMenuOpen]);
 
   return (
     <>
@@ -150,22 +176,44 @@ export default function Header({ departments, session }: HeaderProps) {
             </div>
           </div>
 
-          {/* Column 3: Brand Statement */}
+          {/* Column 3: Brand Statement or Saved Articles */}
           <div className="flex flex-col space-y-4">
-            <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent border-b border-foreground/20 pb-2">
-              The Keystone
-            </span>
-            <div className="space-y-6">
-              <p className="font-serif text-sm md:text-base text-muted leading-relaxed">
-                A publication of politics, culture, education, criticism, and student thought. Published digitally in Tokyo, Japan.
-              </p>
-              <p className="font-sans text-xs text-muted leading-relaxed font-bold">
-                Inquiries & Submissions:<br />
-                <a href="mailto:admin@petratutors.com" className="underline hover:text-accent transition-colors">
-                  admin@petratutors.com
-                </a>
-              </p>
-            </div>
+            {session && savedArticles.length > 0 ? (
+              <>
+                <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent border-b border-foreground/20 pb-2">
+                  Saved Articles
+                </span>
+                <div className="flex flex-col space-y-3.5 max-h-80 overflow-y-auto pr-2">
+                  {savedArticles.map((art) => (
+                    <Link 
+                      key={art.slug}
+                      href={`/articles/${art.slug}`}
+                      onClick={toggleMenu}
+                      className="font-serif text-sm font-bold text-foreground hover:text-accent transition-colors block leading-snug"
+                    >
+                      {art.title}
+                    </Link>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent border-b border-foreground/20 pb-2">
+                  The Keystone
+                </span>
+                <div className="space-y-6">
+                  <p className="font-serif text-sm md:text-base text-muted leading-relaxed">
+                    A publication of politics, culture, education, criticism, and student thought. Published digitally in Tokyo, Japan.
+                  </p>
+                  <p className="font-sans text-xs text-muted leading-relaxed font-bold">
+                    Inquiries & Submissions:<br />
+                    <a href="mailto:admin@petratutors.com" className="underline hover:text-accent transition-colors">
+                      admin@petratutors.com
+                    </a>
+                  </p>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

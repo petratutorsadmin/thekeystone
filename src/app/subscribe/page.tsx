@@ -68,7 +68,7 @@ export default function SubscribePage() {
             <h3 className="font-rollercoaster text-2xl font-black uppercase mt-2 mb-1">Digital</h3>
             <span className="font-sans text-xs font-bold text-accent">Free Forever</span>
             <p className="font-serif text-sm text-muted mt-6 leading-relaxed">
-              Full access to all online essays, archives, and our weekly chronological newsletter dispatches from "The Scroll".
+              Full access to all online essays, archives, and our weekly chronological newsletter dispatches from "The Surf".
             </p>
           </div>
           <div className="mt-8">

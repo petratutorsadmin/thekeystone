@@ -6,11 +6,13 @@ import ArticleBody from "@/components/ArticleBody";
 import PullQuote from "@/components/PullQuote";
 import ArticlePreview from "@/components/ArticlePreview";
 import { type Article, sampleArticles } from "@/lib/data";
+import { getSession } from "@/lib/auth";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
+  const session = await getSession();
   
   let article: Article | null = null;
   let relatedArticles: Article[] = [];
@@ -73,7 +75,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
   return (
     <article className="w-full pb-24">
-      <ArticleHeader article={article} />
+      <ArticleHeader article={article} sessionEmail={session?.email} />
       
       <ArticleBody content={content} />
       

@@ -1,6 +1,7 @@
 import { type Article } from "@/lib/data";
+import SaveButton from "./SaveButton";
 
-export default function ArticleHeader({ article }: { article: Article }) {
+export default function ArticleHeader({ article, sessionEmail }: { article: Article; sessionEmail?: string }) {
   return (
     <header className="mb-12 border-b border-border-dark pb-12">
       <div className="max-w-4xl mx-auto px-4 md:px-8 text-center pt-16 pb-12">
@@ -26,6 +27,10 @@ export default function ArticleHeader({ article }: { article: Article }) {
           <span>{article.date}</span>
           <span className="hidden md:inline">&bull;</span>
           <span>{article.readingTime}</span>
+        </div>
+
+        <div className="mt-8">
+          <SaveButton articleSlug={article.slug} articleTitle={article.title} userEmail={sessionEmail} />
         </div>
       </div>
       

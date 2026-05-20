@@ -228,7 +228,7 @@ export default async function Home() {
             )}
           </div>
 
-          {/* Right Column: Secondary Article, The Scroll Widget, & Weekly Notes */}
+          {/* Right Column: Secondary Article, The Surf Widget, & Weekly Notes */}
           <div className="lg:col-span-3 flex flex-col gap-12 order-3">
             {rightColumnArticle && (
               <div className="border-b border-foreground/30 pb-8">
@@ -236,11 +236,11 @@ export default async function Home() {
               </div>
             )}
 
-            {/* "The Scroll" Feed Widget */}
+            {/* \"The Surf\" Feed Widget */}
             <div className="hidden md:block border-4 border-double border-accent p-8 bg-background">
               <div className="border-b-2 border-foreground pb-2 mb-4">
                 <h2 className="font-rollercoaster text-xl font-black uppercase tracking-normal text-accent text-center">
-                  The Scroll
+                  The Surf
                 </h2>
               </div>
               <div className="flex flex-col">

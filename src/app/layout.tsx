@@ -40,10 +40,10 @@ const fallbackDepts = [
     slug: "current-affairs",
     articles: [
       {
-        title: "Tokyo's Shifting Urban Architecture",
+        title: "Lorem Ipsum Dolor",
         slug: "tokyo-shifting-urban-architecture",
-        summary: "Exploring how post-pandemic developments are transforming the micro-neighborhoods of the capital.",
-        author: "Kenji Sato"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Lorem Ipsum"
       }
     ]
   },
@@ -52,10 +52,10 @@ const fallbackDepts = [
     slug: "politics",
     articles: [
       {
-        title: "The Future of Coalition Governance in Japan",
+        title: "Sed do Eiusmod",
         slug: "future-coalition-governance-japan",
-        summary: "An in-depth look at changing voter coalitions and legislative dynamics in Tokyo.",
-        author: "Yuki Tanaka"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Dolor Sit Amet"
       }
     ]
   },
@@ -64,10 +64,10 @@ const fallbackDepts = [
     slug: "opinions",
     articles: [
       {
-        title: "The Slow Death of the Printed Word",
+        title: "Ut Enim ad Minim",
         slug: "slow-death-printed-word",
-        summary: "Why print media's tactile friction remains essential for deep democratic engagement.",
-        author: "Erika Mori"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Consectetur Adipiscing"
       }
     ]
   },
@@ -76,10 +76,10 @@ const fallbackDepts = [
     slug: "philosophy",
     articles: [
       {
-        title: "Why Reading Slowly is a Political Act",
+        title: "Duis Aute Irure",
         slug: "why-reading-slowly-political-act",
-        summary: "On the active resistance against speed-fetishism and short-form algorithms.",
-        author: "Ryu Handa"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Tempor Incididunt"
       }
     ]
   },
@@ -88,10 +88,10 @@ const fallbackDepts = [
     slug: "science",
     articles: [
       {
-        title: "The Ethics of Artificial Cognition",
+        title: "Excepteur Sint Occaecat",
         slug: "ethics-artificial-cognition",
-        summary: "Tracing the philosophical boundary lines of agency, creativity, and model alignment.",
-        author: "Dr. S. Watanabe"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Labore Et Dolore"
       }
     ]
   },
@@ -100,10 +100,10 @@ const fallbackDepts = [
     slug: "art",
     articles: [
       {
-        title: "Post-War Avant-Garde in Tokyo Galleries",
+        title: "Mollis Pretium Lorem",
         slug: "postwar-avantgarde-tokyo-galleries",
-        summary: "How contemporary artists are referencing the visual language of Gutai group and radical movements.",
-        author: "Mari Suzuki"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Nisl Sociosqu"
       }
     ]
   },
@@ -112,10 +112,10 @@ const fallbackDepts = [
     slug: "music",
     articles: [
       {
-        title: "Soundscapes of Shibuya: A Modern Review",
+        title: "Aenean Platea Nisl",
         slug: "soundscapes-shibuya-modern-review",
-        summary: "A critical listening journey through ambient sounds, field recordings, and local electronica.",
-        author: "Kento Ito"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Class Donec"
       }
     ]
   },
@@ -124,10 +124,10 @@ const fallbackDepts = [
     slug: "poetry",
     articles: [
       {
-        title: "Rain and Concrete: New Tokyo Poetry",
+        title: "Class Donec Elementum",
         slug: "rain-and-concrete-tokyo-poetry",
-        summary: "A selection of lyrical works exploring city isolation and the geometry of railway platforms.",
-        author: "Saki Sato"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Dolor Sit Amet"
       }
     ]
   },
@@ -136,10 +136,10 @@ const fallbackDepts = [
     slug: "photography",
     articles: [
       {
-        title: "Visual Archives: The Quiet Side of Shinjuku",
+        title: "Tristique Facilisis Platea",
         slug: "visual-archives-quiet-side-shinjuku",
-        summary: "A photography spread documenting early morning alleyways before the city awakens.",
-        author: "Takeshi Aoki"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Lorem Ipsum"
       }
     ]
   },
@@ -148,10 +148,10 @@ const fallbackDepts = [
     slug: "voices",
     articles: [
       {
-        title: "Minority Perspectives in Public Education",
+        title: "Platea Nisl Sociosqu",
         slug: "minority-perspectives-public-education",
-        summary: "How local language programs are addressing the educational needs of international students.",
-        author: "Mei Yamada"
+        summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        author: "Consectetur Adipiscing"
       }
     ]
   },
