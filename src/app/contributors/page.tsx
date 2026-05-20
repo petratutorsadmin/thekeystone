@@ -26,7 +26,7 @@ export default async function ContributorsPage() {
   return (
     <div className="max-w-4xl mx-auto w-full px-4 md:px-8 py-12 md:py-16">
       <div className="mb-16 border-b-4 border-foreground pb-6">
-        <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-4">
+        <h1 className="font-rollercoaster text-5xl md:text-6xl font-bold text-foreground mb-4">
           Contributors
         </h1>
         <p className="font-sans text-lg text-muted max-w-2xl">

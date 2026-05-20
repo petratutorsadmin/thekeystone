@@ -65,7 +65,7 @@ export default async function Home() {
     <div className="max-w-7xl mx-auto w-full px-4 md:px-8 py-8 md:py-16 bg-background">
       {!hasContent ? (
         <div className="py-24 text-center border-4 border-foreground p-8 bg-background">
-          <h2 className="font-serif text-4xl font-extrabold mb-4 uppercase tracking-tight">Welcome to Keystone</h2>
+          <h2 className="font-rollercoaster text-4xl font-extrabold mb-4 uppercase tracking-normal">Welcome to Keystone</h2>
           <p className="font-sans text-muted mb-8 max-w-md mx-auto font-bold">
             Your publication currently has no active content. Please visit the Studio to create articles, issues, departments, and recommendations.
           </p>
@@ -91,7 +91,7 @@ export default async function Home() {
             {/* Print Editions Promo Block (Double Border) */}
             <div className="border-4 border-double border-accent p-8 bg-background flex flex-col items-center text-center">
               <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent mb-2">Print Editions</span>
-              <h3 className="font-serif text-xl font-black uppercase leading-tight mb-4">Keystone Issue 001</h3>
+              <h3 className="font-rollercoaster text-xl font-black uppercase leading-tight mb-4">Keystone Issue 001</h3>
               <p className="font-serif text-xs text-muted leading-relaxed mb-6">
                 Our foundational essays and dispatches in a printed, archival format.
               </p>
@@ -147,7 +147,7 @@ export default async function Home() {
             {/* "The Scroll" Feed Widget */}
             <div className="border-4 border-double border-accent p-8 bg-background">
               <div className="border-b-2 border-foreground pb-2 mb-4">
-                <h2 className="font-serif text-xl font-black uppercase tracking-wider text-accent text-center">
+                <h2 className="font-rollercoaster text-xl font-black uppercase tracking-normal text-accent text-center">
                   The Scroll
                 </h2>
               </div>
@@ -178,7 +178,7 @@ export default async function Home() {
             )}
             
             <div className="bg-foreground text-background p-8 text-center border border-foreground">
-              <h3 className="font-serif text-2xl font-black uppercase tracking-tight mb-4">
+              <h3 className="font-rollercoaster text-2xl font-black uppercase tracking-normal mb-4">
                 Submissions
               </h3>
               <p className="font-sans text-sm opacity-80 mb-6 leading-relaxed">

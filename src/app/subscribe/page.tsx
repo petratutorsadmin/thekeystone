@@ -50,7 +50,7 @@ export default function SubscribePage() {
         <span className="font-sans text-xs font-black uppercase tracking-widest text-accent mb-2 block">
           Keystone is, and always will be, 100% free.
         </span>
-        <h1 className="font-serif text-5xl md:text-6xl font-black text-foreground uppercase tracking-tight">
+        <h1 className="font-rollercoaster text-5xl md:text-6xl font-black text-foreground uppercase tracking-normal">
           Read & Support
         </h1>
         <p className="font-sans text-base text-muted max-w-xl mx-auto mt-4 leading-relaxed font-bold">
@@ -65,7 +65,7 @@ export default function SubscribePage() {
         <div className="border border-foreground p-8 flex flex-col justify-between bg-background">
           <div>
             <span className="font-sans text-[10px] font-black uppercase tracking-widest text-muted">Option 01</span>
-            <h3 className="font-serif text-2xl font-black uppercase mt-2 mb-1">Digital</h3>
+            <h3 className="font-rollercoaster text-2xl font-black uppercase mt-2 mb-1">Digital</h3>
             <span className="font-sans text-xs font-bold text-accent">Free Forever</span>
             <p className="font-serif text-sm text-muted mt-6 leading-relaxed">
               Full access to all online essays, archives, and our weekly chronological newsletter dispatches from "The Scroll".
@@ -88,7 +88,7 @@ export default function SubscribePage() {
           </div>
           <div>
             <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent">Option 02</span>
-            <h3 className="font-serif text-2xl font-black uppercase mt-2 mb-1">Print Edition</h3>
+            <h3 className="font-rollercoaster text-2xl font-black uppercase mt-2 mb-1">Print Edition</h3>
             <span className="font-sans text-xs font-bold text-accent">Free for Students</span>
             <p className="font-serif text-sm text-foreground mt-6 leading-relaxed">
               Get a physical copy of our quarterly review. Free for local Petra students/members. Optional $15 postage contribution for external readers.
@@ -105,7 +105,7 @@ export default function SubscribePage() {
         <div className="border border-foreground p-8 flex flex-col justify-between bg-background opacity-85">
           <div>
             <span className="font-sans text-[10px] font-black uppercase tracking-widest text-muted">Option 03</span>
-            <h3 className="font-serif text-2xl font-black uppercase mt-2 mb-1">Keystone Patron</h3>
+            <h3 className="font-rollercoaster text-2xl font-black uppercase mt-2 mb-1">Keystone Patron</h3>
             <span className="font-sans text-xs font-bold text-accent">Voluntary Supporter</span>
             <p className="font-serif text-sm text-muted mt-6 leading-relaxed">
               Fund printing costs and student journalism. Patrons receive print issues automatically and special recognition in the masthead.
@@ -122,7 +122,7 @@ export default function SubscribePage() {
 
       {/* Simple Newsletter Sign Up Input Form */}
       <div id="dispatch-form" className="border border-foreground p-8 md:p-12 text-center bg-background max-w-2xl mx-auto">
-        <h3 className="font-serif text-2xl font-black uppercase mb-3">Keystone Dispatch</h3>
+        <h3 className="font-rollercoaster text-2xl font-black uppercase mb-3">Keystone Dispatch</h3>
         <p className="font-serif text-sm text-muted mb-8 leading-relaxed max-w-md mx-auto">
           Enter your email to join our mailing list and receive the weekly digital dispatches.
         </p>

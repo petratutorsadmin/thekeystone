@@ -37,7 +37,7 @@ export default function LoginPage() {
           <span className="font-sans text-[10px] font-black uppercase tracking-widest text-accent mb-2 block">
             Reader Portal
           </span>
-          <h1 className="font-serif text-3xl font-black text-foreground uppercase tracking-tight">
+          <h1 className="font-rollercoaster text-3xl font-black text-foreground uppercase tracking-normal">
             Log In
           </h1>
           <p className="font-serif text-xs text-muted mt-2 leading-relaxed">

@@ -5,7 +5,7 @@ export default function DepartmentGrid({ articles, title, description }: { artic
   return (
     <div className="w-full">
       <div className="mb-12 border-b-4 border-foreground pb-6">
-        <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground capitalize mb-4">
+        <h1 className="font-rollercoaster text-5xl md:text-6xl font-bold text-foreground capitalize mb-4">
           {title.replace('-', ' ')}
         </h1>
         {description && (

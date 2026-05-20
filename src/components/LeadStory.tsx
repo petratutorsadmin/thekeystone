@@ -20,7 +20,7 @@ export default function LeadStory({ article }: { article: Article }) {
       
       {/* Title */}
       <Link href={`/articles/${article.slug}`}>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-foreground mb-4 group-hover:text-accent transition-colors tracking-tight">
+        <h2 className="font-rollercoaster text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-foreground mb-4 group-hover:text-accent transition-colors tracking-normal">
           {article.title}
         </h2>
       </Link>

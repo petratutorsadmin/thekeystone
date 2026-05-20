@@ -7,7 +7,7 @@ export default function ContributorCard({ contributor }: { contributor: Contribu
         {contributor.imagePlaceholder || "IMG"}
       </div>
       <div>
-        <h3 className="font-serif text-xl md:text-2xl font-bold text-foreground mb-1">
+        <h3 className="font-rollercoaster text-xl md:text-2xl font-bold text-foreground mb-1">
           {contributor.name}
         </h3>
         <p className="font-sans text-xs uppercase tracking-wider text-accent mb-3">

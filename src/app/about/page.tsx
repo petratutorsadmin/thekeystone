@@ -10,7 +10,7 @@ export default function AboutPage() {
         <span className="font-sans text-xs font-black uppercase tracking-widest text-accent mb-2 block">
           FOUNDERS' NOTE
         </span>
-        <h1 className="font-serif text-4xl md:text-5xl font-black text-foreground uppercase tracking-tight leading-none">
+        <h1 className="font-rollercoaster text-4xl md:text-5xl font-black text-foreground uppercase tracking-normal leading-none">
           Why We Built Keystone
         </h1>
         <p className="font-sans text-sm text-muted mt-3 font-bold uppercase tracking-wider">
@@ -20,7 +20,7 @@ export default function AboutPage() {
 
       {/* Main Letter Body */}
       <article className="font-serif text-base md:text-lg text-foreground leading-relaxed space-y-6">
-        <p className="first-letter:text-5xl first-letter:font-black first-letter:font-serif first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-accent">
+        <p className="first-letter:text-5xl first-letter:font-black first-letter:font-rollercoaster first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:text-accent">
           Keystone was not created because we believed that the world needed another media platform. 
         </p>
         
@@ -33,7 +33,7 @@ export default function AboutPage() {
         </p>
 
         {/* Elegant Pull Quote block */}
-        <blockquote className="border-y border-foreground py-6 my-8 font-serif italic text-lg md:text-xl text-accent text-center px-4">
+        <blockquote className="border-y border-foreground py-6 my-8 font-rollercoaster text-lg md:text-xl text-accent text-center px-4">
           "Make Education Human Again."
         </blockquote>
 

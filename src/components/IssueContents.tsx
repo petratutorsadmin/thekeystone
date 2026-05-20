@@ -25,7 +25,7 @@ export default function IssueContents({ articles }: { articles: Article[] }) {
               {deptArticles.map(article => (
                 <li key={article.slug} className="group">
                   <Link href={`/articles/${article.slug}`} className="flex flex-col">
-                    <span className="font-serif text-lg font-bold text-foreground group-hover:text-accent transition-colors">
+                    <span className="font-rollercoaster text-lg font-bold text-foreground group-hover:text-accent transition-colors">
                       {article.title}
                     </span>
                     <span className="font-sans text-xs text-muted mt-1">

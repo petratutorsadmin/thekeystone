@@ -24,7 +24,7 @@ export default function ArticlePreview({ article, hideImage = false, isScrollIte
         </div>
         
         <Link href={`/articles/${article.slug}`}>
-          <h4 className="font-serif text-base md:text-lg font-bold leading-snug text-foreground group-hover:text-accent transition-colors">
+          <h4 className="font-rollercoaster text-base md:text-lg font-bold leading-snug text-foreground group-hover:text-accent transition-colors">
             {article.title}
           </h4>
         </Link>
@@ -55,7 +55,7 @@ export default function ArticlePreview({ article, hideImage = false, isScrollIte
           
           {/* Title */}
           <Link href={`/articles/${article.slug}`}>
-            <h3 className="font-serif text-xl md:text-2xl lg:text-3xl font-black leading-snug text-foreground mb-2 group-hover:text-accent transition-colors tracking-tight">
+            <h3 className="font-rollercoaster text-xl md:text-2xl lg:text-3xl font-black leading-snug text-foreground mb-2 group-hover:text-accent transition-colors tracking-normal">
               {article.title}
             </h3>
           </Link>
