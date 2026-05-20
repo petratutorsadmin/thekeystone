@@ -1,7 +1,7 @@
 import { client } from "@/sanity/client";
 import { contributorsQuery } from "@/sanity/queries";
 import ContributorCard from "@/components/ContributorCard";
-import { type Contributor } from "@/lib/data";
+import { type Contributor, sampleContributors } from "@/lib/data";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -21,6 +21,10 @@ export default async function ContributorsPage() {
     }));
   } catch (error) {
     console.error("Error fetching contributors from Sanity:", error);
+  }
+
+  if (contributors.length === 0) {
+    contributors = sampleContributors;
   }
 
   return (

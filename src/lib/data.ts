@@ -81,6 +81,13 @@ export const sampleArticles: Article[] = [
     readingTime: '5 min read',
     summary: 'The founders of Petra discuss the need for a dedicated space for student voices and intellectual discourse.',
     imagePlaceholder: 'founders-letter-hero',
+    content: `
+      <p>Keystone was not created because we believed that the world needed another media platform. It was created because we increasingly felt that most modern institutions have lost the ability to speak about people as human beings.</p>
+      <h2>The Abstraction of Human Life</h2>
+      <p>The larger an institution becomes, the more human life is transformed into abstractions: metrics, performance, demographics, efficiency, and outcomes. Culture is no longer something practiced by people, but something for branding and politics. We want to resist this reduction.</p>
+      <blockquote>"Our motto is: Make Education Human Again."</blockquote>
+      <p>We believe strongly that students, workers, artists, tutors, and ordinary people whose voices are never heard, deserve spaces where everyone can think slowly and seriously, not as content for profit, but as human beings.</p>
+    `
   },
   {
     slug: 'thinking-between-english-and-japanese',
@@ -92,6 +99,12 @@ export const sampleArticles: Article[] = [
     readingTime: '6 min read',
     summary: 'A reflection on the challenges and nuances of navigating complex ideas across two languages.',
     imagePlaceholder: 'bilingual-hero',
+    content: `
+      <h2>The Threshold of Translation</h2>
+      <p>To move between languages is not simply to swap words; it is to shift one's cognitive framework. When writing in Japanese, there is a certain spatial orientation and relationship-driven grammar that defines how a thought unfolds. In English, the structure demands an immediate declaration of agency.</p>
+      <h3>The Double Vision</h3>
+      <p>Navigating complex philosophical ideas across this linguistic boundary forces a student to see their own thoughts from the outside. You learn that what is self-evident in one language requires deep conceptual translation in another. This double vision is a profound intellectual advantage.</p>
+    `
   },
   {
     slug: 'what-makes-a-good-mentor',
@@ -103,6 +116,13 @@ export const sampleArticles: Article[] = [
     readingTime: '10 min read',
     summary: 'An interview with a senior tutor on the art of guiding students rather than simply instructing them.',
     imagePlaceholder: 'mentor-interview-hero',
+    content: `
+      <h2>Beyond Instruction</h2>
+      <p>In our conversation with a veteran mentor, we explore the subtle boundary between teaching and guiding. A teacher often sees their role as transmitting a body of knowledge. A mentor, however, is concerned with the student's relationship to that knowledge.</p>
+      <blockquote>"The goal is not to solve the problem for them, but to help them tolerate the discomfort of not knowing."</blockquote>
+      <h3>Cultivating Curiosity</h3>
+      <p>Standardized learning systems condition students to seek the correct answer as quickly as possible. Mentorship is the antidote to this rush. It is about slowing down, tracing the lineage of a student's mistake, and turning it into an invitation for deeper investigation.</p>
+    `
   },
   {
     slug: 'tokyo-after-class',
@@ -114,6 +134,11 @@ export const sampleArticles: Article[] = [
     readingTime: 'Gallery',
     summary: 'A photographic essay capturing the quiet moments of students navigating Tokyo in the evening.',
     imagePlaceholder: 'tokyo-photography-hero',
+    content: `
+      <p>A series of visual observations capturing the city as classes end and the sun dips behind the high-rises. In the quiet backstreets of Shibuya and the neon corridors of Shinjuku, student life continues outside the bounds of the curriculum.</p>
+      <blockquote>"The city is a silent text, waiting to be read."</blockquote>
+      <p>We present these photographs not as marketing assets, but as quiet fragments of the everyday lives of our contributors under the weight of Tokyo's neon shadow.</p>
+    `
   },
   {
     slug: 'english-education-not-just-test-scores',
@@ -125,6 +150,12 @@ export const sampleArticles: Article[] = [
     readingTime: '7 min read',
     summary: 'An argument for a more holistic approach to language education that values communication over standardized metrics.',
     imagePlaceholder: 'education-policy-hero',
+    content: `
+      <h2>The Measurement Fallacy</h2>
+      <p>In the contemporary educational landscape, language proficiency is increasingly reduced to a score on a standardized test. This paradigm assumes that communication is a mechanical skill that can be quantified. In reality, it is a deeply human relationship.</p>
+      <h3>The Limits of Metrics</h3>
+      <p>When students are trained exclusively to pass examinations, they learn to avoid risk. They stick to memorized formulas and fear error. But error is the very place where learning occurs. We must move toward assessment models that value critical reading, translation, and genuine voice.</p>
+    `
   },
   {
     slug: 'student-writing-matters-age-of-ai',
@@ -136,6 +167,13 @@ export const sampleArticles: Article[] = [
     readingTime: '9 min read',
     summary: 'Examining the role of original student writing when artificial intelligence can generate competent prose.',
     imagePlaceholder: 'ai-writing-hero',
+    content: `
+      <h2>The Prose Generator</h2>
+      <p>With the advent of large language models capable of producing grammatically flawless essays in seconds, the traditional writing assignment has been thrown into crisis. Some suggest writing is obsolete. We suggest the opposite: it has never been more vital.</p>
+      <blockquote>"Writing is not the recording of pre-existing thoughts; it is the very process of thinking itself."</blockquote>
+      <h3>The Authentic Voice</h3>
+      <p>An AI can synthesize patterns, but it cannot experience alienation, hope, or contradiction. When a student writes, they are wrestling with their own place in the world. Reclaiming writing as a slow, human practice is a vital act of intellectual resistance.</p>
+    `
   }
 ];
 

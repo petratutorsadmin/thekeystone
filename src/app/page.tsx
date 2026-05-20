@@ -5,7 +5,7 @@ import ArticlePreview from "@/components/ArticlePreview";
 import IssueContents from "@/components/IssueContents";
 import RecommendationList from "@/components/RecommendationList";
 import Link from "next/link";
-import { type Article } from "@/lib/data";
+import { type Article, sampleArticles } from "@/lib/data";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -31,6 +31,10 @@ export default async function Home() {
     rawRecommendations = await client.fetch(recommendationsQuery);
   } catch (error) {
     console.error("Error fetching homepage content from Sanity:", error);
+  }
+
+  if (articles.length === 0) {
+    articles = sampleArticles;
   }
 
   // Format recommendations into expected dictionary

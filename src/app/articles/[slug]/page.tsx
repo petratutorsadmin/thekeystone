@@ -5,7 +5,7 @@ import ArticleHeader from "@/components/ArticleHeader";
 import ArticleBody from "@/components/ArticleBody";
 import PullQuote from "@/components/PullQuote";
 import ArticlePreview from "@/components/ArticlePreview";
-import { type Article } from "@/lib/data";
+import { type Article, sampleArticles } from "@/lib/data";
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -51,6 +51,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     }
   } catch (error) {
     console.error("Error fetching article page content from Sanity:", error);
+  }
+
+  if (!article) {
+    const matchedSample = sampleArticles.find(a => a.slug === resolvedParams.slug);
+    if (matchedSample) {
+      article = matchedSample;
+      relatedArticles = sampleArticles.filter(
+        a => a.department === matchedSample.department && a.slug !== matchedSample.slug
+      );
+    }
   }
 
   if (!article) {

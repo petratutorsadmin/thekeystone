@@ -1,7 +1,18 @@
 import { client } from "@/sanity/client";
 import { articlesByDepartmentQuery, departmentQuery } from "@/sanity/queries";
 import DepartmentGrid from "@/components/DepartmentGrid";
-import { type Article } from "@/lib/data";
+import { type Article, sampleArticles } from "@/lib/data";
+
+const DEPT_MAP: Record<string, { title: string, description: string }> = {
+  politics: { title: "Politics", description: "Dispatches on power, local governance, and systemic change." },
+  education: { title: "Education", description: "Critical analysis of learning systems, pedagogical approaches, and classroom reform." },
+  culture: { title: "Culture", description: "Essays and commentary on art, literature, media, and everyday life." },
+  essays: { title: "Essays", description: "Long-form narrative writing, philosophical inquiry, and personal reflections." },
+  interviews: { title: "Interviews", description: "Conversations with tutors, students, and thinkers on education and society." },
+  'student-voices': { title: "Student Voices", description: "Reflections, opinions, and stories written by student contributors." },
+  photography: { title: "Photography", description: "Visual essays capturing everyday moments and cityscapes." },
+  criticism: { title: "Criticism", description: "Critiques of modern institutions, capitalism, and contemporary thought." }
+};
 
 export const revalidate = 60; // Revalidate every 60 seconds
 
@@ -31,8 +42,13 @@ export default async function DepartmentPage({ params }: { params: Promise<{ dep
     console.error("Error fetching department articles from Sanity:", error);
   }
 
-  const title = deptInfo?.title || department;
-  const description = deptInfo?.description || `Articles published under the ${department.replace('-', ' ')} department.`;
+  if (articles.length === 0) {
+    articles = sampleArticles.filter(a => a.department === department);
+  }
+
+  const info = DEPT_MAP[department] || { title: department, description: `Articles published under the ${department.replace('-', ' ')} department.` };
+  const title = deptInfo?.title || info.title;
+  const description = deptInfo?.description || info.description;
 
   return (
     <div className="max-w-7xl mx-auto w-full px-4 md:px-8 py-12 md:py-16">
