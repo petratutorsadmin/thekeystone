@@ -8,8 +8,8 @@
   --color-border-subtle: #E6E0D5;
   --color-border-dark: #281136;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-playfair), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Times New Roman", Times, Georgia, serif;
+  --font-serif: "Times New Roman", Times, Georgia, serif;
   --font-rollercoaster: var(--font-rollercoaster), serif;
 }
 
