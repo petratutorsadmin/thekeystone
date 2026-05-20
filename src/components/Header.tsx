@@ -227,10 +227,10 @@ export default function Header({ departments, session }: HeaderProps) {
 
       {/* Main Top Header Block */}
       <header className="w-full bg-background border-b-2 border-foreground">
-        {/* Top Header Panel - Flex layout to prevent logo collision and stacking on mobile */}
-        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-8 flex items-center justify-between gap-4">
+        {/* Top Header Panel - Grid-3 layout for perfect centering across all viewports */}
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-6 grid grid-cols-3 items-center gap-4">
           {/* Left: Hamburger menu */}
-          <div className="flex-1 flex justify-start">
+          <div className="flex justify-start">
             <button 
               onClick={toggleMenu}
               className="flex items-center gap-2 md:gap-3 group focus:outline-none cursor-pointer"
@@ -247,8 +247,8 @@ export default function Header({ departments, session }: HeaderProps) {
             </button>
           </div>
 
-          {/* Center: Brand Logo */}
-          <div className="flex justify-center text-center shrink-0">
+          {/* Center: Brand Logo (Perfectly Centered via Grid) */}
+          <div className="flex justify-center text-center">
             <Link href="/" className="group flex justify-center items-center">
               <img 
                 src="/logo.png" 
@@ -259,7 +259,7 @@ export default function Header({ departments, session }: HeaderProps) {
           </div>
 
           {/* Right: Actions */}
-          <div className="flex-1 flex items-center justify-end gap-2 md:gap-4">
+          <div className="flex items-center justify-end gap-2 md:gap-4">
             {session ? (
               <>
                 <span className="hidden lg:inline-block font-sans text-[10px] uppercase tracking-wider text-muted font-bold">
@@ -276,7 +276,7 @@ export default function Header({ departments, session }: HeaderProps) {
               <>
                 <Link 
                   href="/login" 
-                  className="font-sans text-[9px] md:text-xs font-bold uppercase tracking-widest border border-foreground px-2 md:px-4 py-1.5 md:py-2.5 hover:bg-foreground hover:text-background transition-all"
+                  className="hidden md:inline-block font-sans text-[9px] md:text-xs font-bold uppercase tracking-widest border border-foreground px-2.5 md:px-4 py-1.5 md:py-2.5 hover:bg-foreground hover:text-background transition-all"
                 >
                   Log In
                 </Link>
