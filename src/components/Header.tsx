@@ -137,6 +137,13 @@ export default function Header({ departments, session }: HeaderProps) {
                 Homepage
               </Link>
               <Link 
+                href="/surf" 
+                onClick={toggleMenu} 
+                className="font-sans text-lg md:text-xl font-bold uppercase tracking-wider text-accent hover:text-accent transition-colors"
+              >
+                The Surf
+              </Link>
+              <Link 
                 href="/about" 
                 onClick={toggleMenu} 
                 className="font-sans text-lg md:text-xl font-bold uppercase tracking-wider hover:text-accent transition-colors"
